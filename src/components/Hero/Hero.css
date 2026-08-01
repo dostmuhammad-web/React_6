@@ -1,0 +1,362 @@
+/* Hero.css */
+
+.hero-section {
+  background-color: #161616;
+  background-image: 
+    radial-gradient(circle at 80% 20%, rgba(255, 107, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(245, 62, 50, 0.05) 0%, transparent 50%),
+    linear-gradient(rgba(22, 22, 22, 0.95), rgba(22, 22, 22, 0.95)),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232c2c2c' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  padding: 100px 0 120px 0;
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+}
+
+/* Paint Strokes in Corners */
+.paint-stroke {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: var(--primary);
+  opacity: 0.15;
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.top-left-stroke {
+  top: -50px;
+  left: -50px;
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+.bottom-right-stroke {
+  bottom: -50px;
+  right: -50px;
+  border-radius: 70% 30% 50% 50% / 30% 60% 40% 70%;
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Left Side Content */
+.hero-content {
+  position: relative;
+}
+
+.hero-subtitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.subtitle-line {
+  width: 30px;
+  height: 2px;
+  background-color: var(--primary);
+}
+
+.hero-title {
+  font-size: 58px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.highlight-text {
+  color: var(--primary);
+  background: linear-gradient(120deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+  font-size: 16px;
+  color: #b0b0b0;
+  margin-bottom: 40px;
+  max-width: 580px;
+  line-height: 1.7;
+}
+
+.hero-cta-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 16px 36px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: 0 8px 24px rgba(255, 107, 0, 0.35);
+  transition: var(--transition);
+}
+
+.hero-btn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(255, 107, 0, 0.5);
+}
+
+.hero-rating {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rating-stars {
+  display: flex;
+  gap: 2px;
+}
+
+.rating-text {
+  font-size: 13px;
+  color: #888;
+}
+
+/* Floating 50% Off Stamp */
+.off-badge-floating {
+  position: absolute;
+  top: 15px;
+  right: 50px;
+  background: radial-gradient(circle, var(--secondary) 60%, var(--primary) 100%);
+  color: var(--white);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  border: 4px dashed rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 24px rgba(245, 62, 50, 0.4);
+  transform: rotate(-15deg);
+  z-index: 10;
+}
+
+.badge-percent {
+  font-size: 26px;
+  line-height: 1;
+}
+
+.badge-text {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+/* Right Side: Spaghetti Visuals */
+.hero-image-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spaghetti-wrapper {
+  position: relative;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glow-effect {
+  position: absolute;
+  width: 110%;
+  height: 110%;
+  background: radial-gradient(circle, rgba(255, 107, 0, 0.25) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* The dark ceramic plate */
+.spaghetti-img {
+  width: 420px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 12px solid #222;
+  box-shadow: var(--shadow-lg), 0 20px 50px rgba(0,0,0,0.8);
+}
+
+/* Fork Lifting Cheese Pull Spaghetti */
+.fork-cheese-pull {
+  position: absolute;
+  top: -40px;
+  right: 0px;
+  z-index: 5;
+}
+
+.fork-img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--primary);
+  box-shadow: var(--shadow-md), 0 10px 20px rgba(0,0,0,0.5);
+  animation: float 4s ease-in-out infinite alternate;
+}
+
+/* Floating Basil Leaves */
+.basil-leaf {
+  position: absolute;
+  pointer-events: none;
+  z-index: 6;
+}
+
+.basil-leaf img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  opacity: 0.85;
+}
+
+.leaf-1 {
+  top: 10%;
+  left: 5%;
+}
+
+.leaf-2 {
+  bottom: 20%;
+  left: 10%;
+}
+
+.leaf-3 {
+  bottom: 15%;
+  right: 10%;
+}
+
+/* Floating Ingredients */
+.floating-ingredient {
+  position: absolute;
+  font-size: 24px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 8px;
+  border-radius: 50%;
+  line-height: 1;
+  z-index: 6;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.tomato-float {
+  top: 30%;
+  right: -20px;
+  animation: float 5s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.cheese-float {
+  bottom: 40%;
+  left: -20px;
+  animation: float 7s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* Responsiveness */
+@media (max-width: 1200px) {
+  .hero-title {
+    font-size: 46px;
+  }
+  .spaghetti-wrapper {
+    width: 380px;
+    height: 380px;
+  }
+  .spaghetti-img {
+    width: 320px;
+    height: 320px;
+  }
+  .fork-img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 60px;
+  }
+  .hero-subtitle {
+    justify-content: center;
+  }
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-cta-wrapper {
+    justify-content: center;
+  }
+  .off-badge-floating {
+    top: -20px;
+    right: 20px;
+  }
+  .hero-image-container {
+    max-width: 450px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 34px;
+  }
+  .hero-cta-wrapper {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .hero-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .spaghetti-wrapper {
+    width: 300px;
+    height: 300px;
+  }
+  .spaghetti-img {
+    width: 260px;
+    height: 260px;
+  }
+  .fork-img {
+    width: 120px;
+    height: 120px;
+  }
+  .off-badge-floating {
+    width: 80px;
+    height: 80px;
+  }
+  .badge-percent {
+    font-size: 20px;
+  }
+}
